@@ -159,6 +159,7 @@ export const translationKeys = [
   'logs.actions.showAscending',
   'optimize.page.title',
   'optimize.page.description',
+  'optimize.page.notice.directMode',
   'optimize.page.actions.start',
   'optimize.page.actions.stop',
   'optimize.page.actions.clear',

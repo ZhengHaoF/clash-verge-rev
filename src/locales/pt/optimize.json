@@ -2,6 +2,9 @@
   "page": {
     "title": "Otimização de IP",
     "description": "Resolve os domínios dos nós por vários canais DNS, escolhe o IP mais rápido por latência TCP e substitui o campo server ao gerar a configuração de execução. O arquivo de assinatura não é alterado.",
+    "notice": {
+      "directMode": "Os testes de velocidade usam conexão direta: com o TUN ativo, o tráfego de teste é roteado pelas regras do núcleo e os resultados podem ser distorcidos. Desative o TUN ou mude o núcleo para o modo «Direct» antes de medir; a resolução DNS é protegida contra sequestro. No uso diário nada precisa mudar — os resultados são injetados ao gerar a configuração de execução, independentemente do modo."
+    },
     "actions": {
       "start": "Otimizar",
       "stop": "Parar",

@@ -2,6 +2,9 @@
   "page": {
     "title": "IP-Optimierung",
     "description": "Löst Node-Domänen über mehrere DNS-Kanäle auf, ermittelt per TCP-Latenz die schnellste IP je Knoten und ersetzt das Server-Feld beim Erstellen der Laufzeitkonfiguration. Die Profildatei bleibt unverändert.",
+    "notice": {
+      "directMode": "Geschwindigkeitstests laufen über direkte Verbindungen: Bei aktivem TUN wird der Testverkehr nach den Kernel-Regeln geroutet, Ergebnisse können verfälscht sein. Deaktivieren Sie TUN oder schalten Sie den Kernel vor dem Test in den Modus „Direct“; die DNS-Auflösung ist gegen Hijacking geschützt. Im Alltag ist nichts zu ändern – Ergebnisse werden beim Erstellen der Laufzeitkonfiguration eingesetzt, unabhängig vom Modus."
+    },
     "actions": {
       "start": "Optimieren",
       "stop": "Stoppen",

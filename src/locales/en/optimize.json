@@ -2,6 +2,9 @@
   "page": {
     "title": "IP Optimization",
     "description": "Resolve node server domains over multiple DNS channels, pick the fastest IP per node by TCP latency, and rewrite the server field when building the runtime configuration. The profile file itself is never modified.",
+    "notice": {
+      "directMode": "Speed tests run over direct connections: with TUN (virtual network adapter) enabled, probe traffic is routed by the core rules and results may be skewed. Turn TUN off or switch the core to Direct mode before testing; DNS resolution is hijack-safe either way. Everyday use needs no change — results are injected when the runtime configuration is built, regardless of the current mode."
+    },
     "actions": {
       "start": "Optimize",
       "stop": "Stop",

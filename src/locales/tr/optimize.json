@@ -2,6 +2,9 @@
   "page": {
     "title": "IP Optimizasyonu",
     "description": "Düğüm alan adlarını birden çok DNS kanalıyla çözer, TCP gecikmesine göre her düğüm için en hızlı IP'yi seçer ve çalışma zamanı yapılandırmasını oluştururken server alanını değiştirir. Abonelik dosyası değiştirilmez.",
+    "notice": {
+      "directMode": "Hız testleri doğrudan bağlantı üzerinden yapılır: TUN açıkken test trafiği çekirdek kurallarına göre yönlendirilir ve sonuçlar sapabilir. Testten önce TUN’u kapatın veya çekirdeği Direct moduna alın; DNS çözümlemesi otomatik olarak ele geçirmeye karşı korumludur. Günlük kullanımda değişiklik gerekmez — sonuçlar, çalışma zamanı yapılandırması oluşturulurken uygulanır ve moddan bağımsızdır."
+    },
     "actions": {
       "start": "Optimize Et",
       "stop": "Durdur",

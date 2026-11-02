@@ -2,6 +2,9 @@
   "page": {
     "title": "Optimasi IP",
     "description": "Menyelesaikan domain node melalui beberapa saluran DNS, memilih IP tercepat per node berdasarkan latensi TCP, dan mengganti field server saat membuat konfigurasi runtime. File langganan tidak diubah.",
+    "notice": {
+      "directMode": "Uji kecepatan berjalan melalui koneksi langsung: saat TUN aktif, lalu lintas pengujian dirutekan sesuai aturan core dan hasil bisa menyimpang. Matikan TUN atau ubah core ke mode Direct sebelum menguji; resolusi DNS otomatis aman dari pembajakan. Penggunaan sehari-hari tidak perlu diubah — hasil disuntikkan saat konfigurasi runtime dibuat, terlepas dari mode."
+    },
     "actions": {
       "start": "Optimasi",
       "stop": "Hentikan",

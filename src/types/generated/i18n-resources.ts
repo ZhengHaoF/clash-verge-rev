@@ -283,6 +283,9 @@ export interface TranslationResources {
           startFailed: string
           stopFailed: string
         }
+        notice: {
+          directMode: string
+        }
         params: {
           concurrency: string
           dnsTimeout: string

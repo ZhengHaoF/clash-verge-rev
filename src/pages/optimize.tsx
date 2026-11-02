@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   Chip,
@@ -218,6 +219,12 @@ const OptimizePage = () => {
       <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
         {t('optimize.page.description')}
       </Typography>
+
+      <Alert severity="info" sx={{ mb: 2 }}>
+        <Typography variant="body2">
+          {t('optimize.page.notice.directMode')}
+        </Typography>
+      </Alert>
 
       <Grid container spacing={2} sx={{ mb: 2 }}>
         <Grid size={{ xs: 6, sm: 3 }}>
