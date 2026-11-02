@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "Optimización de IP",
+    "description": "Resuelve los dominios de los nodos mediante varios canales DNS, elige la IP más rápida por latencia TCP y sustituye el campo server al generar la configuración de ejecución. El archivo de suscripción no se modifica.",
+    "actions": {
+      "start": "Optimizar",
+      "stop": "Detener",
+      "clear": "Borrar resultados"
+    },
+    "enable": {
+      "label": "Aplicar IPs optimizadas automáticamente",
+      "hint": "Sustituye el campo server de los nodos en la configuración de ejecución; sigue vigente tras actualizar la suscripción."
+    },
+    "params": {
+      "concurrency": "Concurrencia",
+      "tcpTimeout": "Tiempo de espera TCP (ms)",
+      "dnsTimeout": "Tiempo de espera DNS (ms)",
+      "doh": "Respaldo DoH"
+    },
+    "stats": {
+      "total": "Nodos: {{total}} (dominio {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} nodos optimizados",
+      "updatedAt": "Última ejecución {{time}}"
+    },
+    "progress": {
+      "resolve": "Resolución",
+      "speed": "Prueba de velocidad"
+    },
+    "status": {
+      "ok": "Correcto",
+      "skip": "Omitido",
+      "fail": "Fallido"
+    },
+    "empty": "Aún no hay resultados. Ejecuta primero una optimización.",
+    "messages": {
+      "startFailed": "Error de optimización",
+      "applyFailed": "No se pudieron aplicar los resultados",
+      "cleared": "Resultados borrados",
+      "stopFailed": "No se pudo detener la optimización"
+    }
+  }
+}

@@ -122,6 +122,25 @@ export const commands = {
     __TAURI_INVOKE<string | null>('get_dns_config_content'),
   validateDnsConfig: () =>
     __TAURI_INVOKE<ValidationOutcome>('validate_dns_config'),
+  /**
+   *  Runs a full optimization pass for the active profile, streaming progress
+   *  through the channel; stops only via [`stop_ip_optimize`].
+   */
+  startIpOptimize: (
+    params: {
+      concurrency: number
+      tcp_timeout_ms: number
+      dns_timeout_ms: number
+      enable_doh: boolean
+    } | null,
+    onEvent: Channel<IpOptimizeEvent>,
+  ) =>
+    __TAURI_INVOKE<IpOptimizeSummary>('start_ip_optimize', { params, onEvent }),
+  stopIpOptimize: () => __TAURI_INVOKE<null>('stop_ip_optimize'),
+  getIpOptimizeResult: () =>
+    __TAURI_INVOKE<IpOptimizeView>('get_ip_optimize_result'),
+  clearIpOptimizeResult: (uid: string | null) =>
+    __TAURI_INVOKE<null>('clear_ip_optimize_result', { uid }),
   getClashLogs: () => __TAURI_INVOKE<string[]>('get_clash_logs'),
   /**  获取Verge配置 */
   getVergeConfig: () => __TAURI_INVOKE<IVerge_Serialize>('get_verge_config'),
@@ -407,6 +426,8 @@ export type IVerge_Deserialize = {
   /**  自动检测当前节点延迟的间隔（分钟） */
   auto_delay_detection_interval_minutes?: number | null
   enable_builtin_enhanced?: boolean | null
+  /**  Rewrite proxy `server` fields with optimized IPs stored per profile. */
+  enable_ip_optimize?: boolean | null
   proxy_layout_column?: number | null
   test_list?: IVergeTestItem[] | null
   /**  0: 不清理; 1: 1天；2: 7天; 3: 30天; 4: 90天 */
@@ -497,6 +518,8 @@ export type IVerge_Serialize = {
   /**  自动检测当前节点延迟的间隔（分钟） */
   auto_delay_detection_interval_minutes: number | null
   enable_builtin_enhanced: boolean | null
+  /**  Rewrite proxy `server` fields with optimized IPs stored per profile. */
+  enable_ip_optimize: boolean | null
   proxy_layout_column: number | null
   test_list: IVergeTestItem[] | null
   /**  0: 不清理; 1: 1天；2: 7天; 3: 30天; 4: 90天 */
@@ -542,6 +565,60 @@ export type InterfaceAddress =
 
 export type IpAddress = {
   ip: string
+}
+
+/**  Fastest IP for one (domain, port) pair. */
+export type IpOptimizeBest = {
+  port: number
+  ip: string
+  latency_ms: number | null
+}
+
+/**  Streamed to the page while a run is in progress. */
+export type IpOptimizeEvent =
+  | { type: 'log'; message: string }
+  | {
+      type: 'stats'
+      total_nodes: number
+      domain_nodes: number
+      ip_nodes: number
+    }
+  | { type: 'progress'; phase: IpOptimizePhase; done: number; total: number }
+  | {
+      type: 'entry'
+      name: string
+      server: string
+      target: string
+      latency_ms: number | null
+      /**  ok | skip | fail */
+      status: string
+    }
+  | { type: 'done'; summary: IpOptimizeSummary }
+
+export type IpOptimizeParams = {
+  concurrency: number
+  tcp_timeout_ms: number
+  dns_timeout_ms: number
+  enable_doh: boolean
+}
+
+export type IpOptimizePhase = 'resolve' | 'speed'
+
+export type IpOptimizeSummary = {
+  profile_uid: string
+  /**  Unix timestamp of the run, seconds. */
+  updated_at: number
+  domain_nodes: number
+  ip_nodes: number
+  /**  Nodes whose (domain, port) pair got a replacement IP. */
+  optimized_nodes: number
+  domains: { [key in string]: IpOptimizeBest[] }
+}
+
+export type IpOptimizeView = {
+  enabled: boolean
+  profile_uid: string
+  profiles: { [key in string]: IpOptimizeSummary }
 }
 
 export type JsonValue =

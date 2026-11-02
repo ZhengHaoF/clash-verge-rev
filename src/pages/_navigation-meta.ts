@@ -18,6 +18,10 @@ export const navigationItems = {
     label: 'layout.components.navigation.tabs.unlock',
     path: '/unlock',
   },
+  optimize: {
+    label: 'layout.components.navigation.tabs.optimize',
+    path: '/optimize',
+  },
   settings: {
     label: 'layout.components.navigation.tabs.settings',
     path: '/settings',

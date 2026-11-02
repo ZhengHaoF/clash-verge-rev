@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP 優選",
+    "description": "透過多通道 DNS 解析節點網域，依 TCP 延遲為每個節點選出最快 IP，並在產生執行時設定時替換 server 欄位；不會修改訂閱檔案本身。",
+    "actions": {
+      "start": "開始優選",
+      "stop": "停止",
+      "clear": "清除結果"
+    },
+    "enable": {
+      "label": "自動套用優選結果",
+      "hint": "於執行時設定中替換節點 server 欄位；訂閱更新後仍然生效。"
+    },
+    "params": {
+      "concurrency": "並發數",
+      "tcpTimeout": "TCP 逾時（毫秒）",
+      "dnsTimeout": "DNS 逾時（毫秒）",
+      "doh": "DoH 回退"
+    },
+    "stats": {
+      "total": "節點總數：{{total}}（網域 {{domain}}，IP {{ip}}）",
+      "optimized": "已優選 {{count}} 個節點",
+      "updatedAt": "上次執行 {{time}}"
+    },
+    "progress": {
+      "resolve": "解析",
+      "speed": "測速"
+    },
+    "status": {
+      "ok": "成功",
+      "skip": "跳過",
+      "fail": "失敗"
+    },
+    "empty": "暫無結果，請先執行優選。",
+    "messages": {
+      "startFailed": "優選失敗",
+      "applyFailed": "套用優選結果失敗",
+      "cleared": "已清除優選結果",
+      "stopFailed": "停止優選失敗"
+    }
+  }
+}

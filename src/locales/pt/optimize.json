@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "Otimização de IP",
+    "description": "Resolve os domínios dos nós por vários canais DNS, escolhe o IP mais rápido por latência TCP e substitui o campo server ao gerar a configuração de execução. O arquivo de assinatura não é alterado.",
+    "actions": {
+      "start": "Otimizar",
+      "stop": "Parar",
+      "clear": "Limpar resultados"
+    },
+    "enable": {
+      "label": "Aplicar IPs otimizados automaticamente",
+      "hint": "Substitui o campo server dos nós na configuração de execução; permanece válido após atualizações da assinatura."
+    },
+    "params": {
+      "concurrency": "Concorrência",
+      "tcpTimeout": "Tempo limite TCP (ms)",
+      "dnsTimeout": "Tempo limite DNS (ms)",
+      "doh": "Fallback DoH"
+    },
+    "stats": {
+      "total": "Nós: {{total}} (domínio {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} nós otimizados",
+      "updatedAt": "Última execução {{time}}"
+    },
+    "progress": {
+      "resolve": "Resolução",
+      "speed": "Teste de velocidade"
+    },
+    "status": {
+      "ok": "OK",
+      "skip": "Ignorado",
+      "fail": "Falhou"
+    },
+    "empty": "Ainda sem resultados. Execute uma otimização primeiro.",
+    "messages": {
+      "startFailed": "Falha na otimização",
+      "applyFailed": "Falha ao aplicar os resultados",
+      "cleared": "Resultados limpos",
+      "stopFailed": "Falha ao parar a otimização"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "Optimasi IP",
+    "description": "Menyelesaikan domain node melalui beberapa saluran DNS, memilih IP tercepat per node berdasarkan latensi TCP, dan mengganti field server saat membuat konfigurasi runtime. File langganan tidak diubah.",
+    "actions": {
+      "start": "Optimasi",
+      "stop": "Hentikan",
+      "clear": "Hapus hasil"
+    },
+    "enable": {
+      "label": "Terapkan IP hasil optimasi otomatis",
+      "hint": "Mengganti field server node dalam konfigurasi runtime; tetap berlaku setelah langganan diperbarui."
+    },
+    "params": {
+      "concurrency": "Konkurensi",
+      "tcpTimeout": "Batas waktu TCP (ms)",
+      "dnsTimeout": "Batas waktu DNS (ms)",
+      "doh": "Cadangan DoH"
+    },
+    "stats": {
+      "total": "Node: {{total}} (domain {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} node dioptimalkan",
+      "updatedAt": "Terakhir dijalankan {{time}}"
+    },
+    "progress": {
+      "resolve": "Resolusi",
+      "speed": "Uji kecepatan"
+    },
+    "status": {
+      "ok": "Berhasil",
+      "skip": "Dilewati",
+      "fail": "Gagal"
+    },
+    "empty": "Belum ada hasil. Jalankan optimasi terlebih dahulu.",
+    "messages": {
+      "startFailed": "Optimasi gagal",
+      "applyFailed": "Gagal menerapkan hasil optimasi",
+      "cleared": "Hasil optimasi dihapus",
+      "stopFailed": "Gagal menghentikan optimasi"
+    }
+  }
+}

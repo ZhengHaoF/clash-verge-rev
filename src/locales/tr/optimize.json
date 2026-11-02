@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP Optimizasyonu",
+    "description": "Düğüm alan adlarını birden çok DNS kanalıyla çözer, TCP gecikmesine göre her düğüm için en hızlı IP'yi seçer ve çalışma zamanı yapılandırmasını oluştururken server alanını değiştirir. Abonelik dosyası değiştirilmez.",
+    "actions": {
+      "start": "Optimize Et",
+      "stop": "Durdur",
+      "clear": "Sonuçları Temizle"
+    },
+    "enable": {
+      "label": "Optimize edilmiş IP'leri otomatik uygula",
+      "hint": "Çalışma zamanı yapılandırmasında düğüm server alanını değiştirir; abonelik güncellemelerinden sonra da geçerlidir."
+    },
+    "params": {
+      "concurrency": "Eşzamanlılık",
+      "tcpTimeout": "TCP zaman aşımı (ms)",
+      "dnsTimeout": "DNS zaman aşımı (ms)",
+      "doh": "DoH yedeği"
+    },
+    "stats": {
+      "total": "Düğümler: {{total}} (alan adı {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} düğüm optimize edildi",
+      "updatedAt": "Son çalıştırma {{time}}"
+    },
+    "progress": {
+      "resolve": "Çözümleme",
+      "speed": "Hız testi"
+    },
+    "status": {
+      "ok": "Başarılı",
+      "skip": "Atlandı",
+      "fail": "Başarısız"
+    },
+    "empty": "Henüz sonuç yok. Önce bir optimizasyon çalıştırın.",
+    "messages": {
+      "startFailed": "Optimizasyon başarısız oldu",
+      "applyFailed": "Sonuçlar uygulanamadı",
+      "cleared": "Sonuçlar temizlendi",
+      "stopFailed": "Optimizasyon durdurulamadı"
+    }
+  }
+}

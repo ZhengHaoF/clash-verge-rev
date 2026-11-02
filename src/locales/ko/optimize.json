@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP 최적화",
+    "description": "여러 DNS 채널로 노드 도메인을 확인하고 TCP 지연 시간으로 각 노드의 가장 빠른 IP를 선택하여 런타임 구성 생성 시 server 필드를 대체합니다. 구독 파일은 변경되지 않습니다.",
+    "actions": {
+      "start": "최적화 시작",
+      "stop": "중지",
+      "clear": "결과 지우기"
+    },
+    "enable": {
+      "label": "최적화 결과 자동 적용",
+      "hint": "런타임 구성에서 노드 server 필드를 대체합니다. 구독 업데이트 후에도 유지됩니다."
+    },
+    "params": {
+      "concurrency": "동시 실행 수",
+      "tcpTimeout": "TCP 타임아웃 (ms)",
+      "dnsTimeout": "DNS 타임아웃 (ms)",
+      "doh": "DoH 대체"
+    },
+    "stats": {
+      "total": "노드 수: {{total}} (도메인 {{domain}}, IP {{ip}})",
+      "optimized": "{{count}}개 노드 최적화됨",
+      "updatedAt": "마지막 실행 {{time}}"
+    },
+    "progress": {
+      "resolve": "확인",
+      "speed": "속도 테스트"
+    },
+    "status": {
+      "ok": "성공",
+      "skip": "건너뜀",
+      "fail": "실패"
+    },
+    "empty": "결과가 없습니다. 먼저 최적화를 실행하세요.",
+    "messages": {
+      "startFailed": "최적화 실패",
+      "applyFailed": "최적화 결과 적용 실패",
+      "cleared": "최적화 결과가 지워졌습니다",
+      "stopFailed": "최적화 중지 실패"
+    }
+  }
+}

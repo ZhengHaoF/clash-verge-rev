@@ -7,6 +7,8 @@ import { debugLog } from '@/utils/debug'
 import { commands } from './bindings'
 import type {
   DownloadEvent,
+  IpOptimizeEvent,
+  IpOptimizeParams,
   JsonValue,
   ListenerProbe,
   ProxyPortSettings,
@@ -28,6 +30,11 @@ export type {
   ListenerTransport,
   ListenerProbe,
   UnlockItem,
+  IpOptimizeEvent,
+  IpOptimizeParams,
+  IpOptimizePhase,
+  IpOptimizeSummary,
+  IpOptimizeView,
 } from './bindings'
 
 export async function copyClashEnv() {
@@ -500,4 +507,23 @@ export async function checkMediaUnlock(onComplete: Channel<UnlockItem>) {
 
 export async function checkMediaUnlockItem(name: string) {
   return commands.checkMediaUnlockItem(name)
+}
+
+export async function startIpOptimize(
+  params: IpOptimizeParams | null,
+  onEvent: Channel<IpOptimizeEvent>,
+) {
+  return commands.startIpOptimize(params, onEvent)
+}
+
+export async function stopIpOptimize() {
+  return commands.stopIpOptimize()
+}
+
+export async function getIpOptimizeResult() {
+  return commands.getIpOptimizeResult()
+}
+
+export async function clearIpOptimizeResult(uid?: string | null) {
+  return commands.clearIpOptimizeResult(uid ?? null)
 }

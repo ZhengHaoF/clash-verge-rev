@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP-Optimierung",
+    "description": "Löst Node-Domänen über mehrere DNS-Kanäle auf, ermittelt per TCP-Latenz die schnellste IP je Knoten und ersetzt das Server-Feld beim Erstellen der Laufzeitkonfiguration. Die Profildatei bleibt unverändert.",
+    "actions": {
+      "start": "Optimieren",
+      "stop": "Stoppen",
+      "clear": "Ergebnisse löschen"
+    },
+    "enable": {
+      "label": "Optimierte IPs automatisch anwenden",
+      "hint": "Ersetzt Server-Felder in der Laufzeitkonfiguration; bleibt nach Abonnement-Updates wirksam."
+    },
+    "params": {
+      "concurrency": "Parallelität",
+      "tcpTimeout": "TCP-Timeout (ms)",
+      "dnsTimeout": "DNS-Timeout (ms)",
+      "doh": "DoH-Fallback"
+    },
+    "stats": {
+      "total": "Knoten: {{total}} (Domäne {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} Knoten optimiert",
+      "updatedAt": "Letzter Lauf {{time}}"
+    },
+    "progress": {
+      "resolve": "Auflösung",
+      "speed": "Geschwindigkeitstest"
+    },
+    "status": {
+      "ok": "OK",
+      "skip": "Übersprungen",
+      "fail": "Fehlgeschlagen"
+    },
+    "empty": "Noch keine Ergebnisse. Bitte zuerst eine Optimierung ausführen.",
+    "messages": {
+      "startFailed": "Optimierung fehlgeschlagen",
+      "applyFailed": "Anwenden der Ergebnisse fehlgeschlagen",
+      "cleared": "Ergebnisse gelöscht",
+      "stopFailed": "Stoppen fehlgeschlagen"
+    }
+  }
+}

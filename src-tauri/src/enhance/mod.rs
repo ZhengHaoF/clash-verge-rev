@@ -37,6 +37,7 @@ struct ConfigValues {
     clash_core: Option<String>,
     enable_tun: bool,
     enable_builtin: bool,
+    enable_ip_optimize: bool,
     socks_enabled: bool,
     http_enabled: bool,
     enable_dns_settings: bool,
@@ -119,6 +120,7 @@ async fn get_config_values(profile_uid: &str) -> ConfigValues {
     let IVerge {
         ref enable_tun_mode,
         ref enable_builtin_enhanced,
+        ref enable_ip_optimize,
         ref verge_socks_enabled,
         ref verge_http_enabled,
         ref enable_external_controller,
@@ -137,6 +139,8 @@ async fn get_config_values(profile_uid: &str) -> ConfigValues {
         dns_settings.enabled,
     );
 
+    let enable_ip_optimize = enable_ip_optimize.unwrap_or(false);
+
     #[cfg(not(target_os = "windows"))]
     let redir_enabled = verge_arc.verge_redir_enabled.unwrap_or(false);
 
@@ -151,6 +155,7 @@ async fn get_config_values(profile_uid: &str) -> ConfigValues {
         clash_core,
         enable_tun,
         enable_builtin,
+        enable_ip_optimize,
         socks_enabled,
         http_enabled,
         enable_dns_settings,
@@ -882,6 +887,7 @@ pub async fn enhance(
         clash_core,
         enable_tun,
         enable_builtin,
+        enable_ip_optimize,
         socks_enabled,
         http_enabled,
         enable_dns_settings,
@@ -932,6 +938,8 @@ pub async fn enhance(
     let config = apply_builtin_scripts(config, clash_core, enable_builtin);
     let config = use_tun(config, enable_tun);
     let (config, dns_settings) = apply_dns_settings(config, enable_dns_settings).await;
+
+    let config = crate::feat::use_ip_optimize(config, enable_ip_optimize, profile_uid).await;
 
     let authoritative = AuthoritativeFields::capture(&config, &gui_tun_keys, dns_settings);
 

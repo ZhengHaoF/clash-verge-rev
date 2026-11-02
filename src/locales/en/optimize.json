@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP Optimization",
+    "description": "Resolve node server domains over multiple DNS channels, pick the fastest IP per node by TCP latency, and rewrite the server field when building the runtime configuration. The profile file itself is never modified.",
+    "actions": {
+      "start": "Optimize",
+      "stop": "Stop",
+      "clear": "Clear Results"
+    },
+    "enable": {
+      "label": "Apply optimized IPs automatically",
+      "hint": "Replaces node server fields in the runtime configuration; stays effective after subscription updates."
+    },
+    "params": {
+      "concurrency": "Concurrency",
+      "tcpTimeout": "TCP timeout (ms)",
+      "dnsTimeout": "DNS timeout (ms)",
+      "doh": "DoH fallback"
+    },
+    "stats": {
+      "total": "Nodes: {{total}} (domain {{domain}}, IP {{ip}})",
+      "optimized": "{{count}} nodes optimized",
+      "updatedAt": "Last run {{time}}"
+    },
+    "progress": {
+      "resolve": "Resolve",
+      "speed": "Speed test"
+    },
+    "status": {
+      "ok": "OK",
+      "skip": "Skipped",
+      "fail": "Failed"
+    },
+    "empty": "No results yet. Run an optimization first.",
+    "messages": {
+      "startFailed": "Optimization failed",
+      "applyFailed": "Failed to apply optimization results",
+      "cleared": "Optimization results cleared",
+      "stopFailed": "Failed to stop the optimization"
+    }
+  }
+}

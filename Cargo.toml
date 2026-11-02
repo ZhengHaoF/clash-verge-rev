@@ -72,6 +72,7 @@ tokio = { version = "1.53.3", features = [
   "macros",
   "time",
   "sync",
+  "net",
 ] }
 flexi_logger = "0.31.10"
 log = "0.4.34"

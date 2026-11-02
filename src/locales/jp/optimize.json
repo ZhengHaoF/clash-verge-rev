@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP最適化",
+    "description": "複数のDNSチャネルでノードのドメインを解決し、TCPレイテンシで各ノードの最速IPを選び、実行時設定の生成時にserverフィールドを置き換えます。サブスクリプションファイルは変更されません。",
+    "actions": {
+      "start": "最適化開始",
+      "stop": "停止",
+      "clear": "結果をクリア"
+    },
+    "enable": {
+      "label": "最適化結果を自動適用",
+      "hint": "実行時設定でノードのserverフィールドを置き換えます。購読更新後も有効です。"
+    },
+    "params": {
+      "concurrency": "並列数",
+      "tcpTimeout": "TCPタイムアウト（ms）",
+      "dnsTimeout": "DNSタイムアウト（ms）",
+      "doh": "DoHフォールバック"
+    },
+    "stats": {
+      "total": "ノード総数：{{total}}（ドメイン {{domain}}、IP {{ip}}）",
+      "optimized": "{{count}} ノードを最適化",
+      "updatedAt": "前回実行 {{time}}"
+    },
+    "progress": {
+      "resolve": "解決",
+      "speed": "速度テスト"
+    },
+    "status": {
+      "ok": "成功",
+      "skip": "スキップ",
+      "fail": "失敗"
+    },
+    "empty": "結果がありません。先に最適化を実行してください。",
+    "messages": {
+      "startFailed": "最適化に失敗しました",
+      "applyFailed": "最適化結果の適用に失敗しました",
+      "cleared": "最適化結果をクリアしました",
+      "stopFailed": "最適化の停止に失敗しました"
+    }
+  }
+}

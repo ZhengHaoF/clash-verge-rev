@@ -141,6 +141,9 @@ pub struct IVerge {
 
     pub enable_builtin_enhanced: Option<bool>,
 
+    /// Rewrite proxy `server` fields with optimized IPs stored per profile.
+    pub enable_ip_optimize: Option<bool>,
+
     pub proxy_layout_column: Option<u8>,
 
     pub test_list: Option<Vec<IVergeTestItem>>,
@@ -505,6 +508,7 @@ impl IVerge {
         patch!(enable_auto_delay_detection);
         patch!(auto_delay_detection_interval_minutes);
         patch!(enable_builtin_enhanced);
+        patch!(enable_ip_optimize);
         patch!(proxy_layout_column);
         patch!(test_list);
         patch!(auto_log_clean);

@@ -31,6 +31,7 @@
 - 新增虚拟网卡设置的「DNS 模式」选项，支持配置 mihomo 系统 DNS 行为
 - 新增「IP 信息」自动刷新开关，关闭后仍可手动刷新
 - 新增 Muse AI 解锁检测，针对 Muse AI 特有的 Cloudflare 人机验证增加「Risky」状态标记
+- 新增「IP 优选」功能：多通道 DNS 解析加 TCP 测速，运行时自动把节点 `server` 替换为最快 IP，不改动订阅文件
 
 </details>
 

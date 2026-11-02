@@ -208,6 +208,7 @@ export interface TranslationResources {
             connections: string
             home: string
             logs: string
+            optimize: string
             profiles: string
             proxies: string
             rules: string
@@ -260,6 +261,48 @@ export interface TranslationResources {
         showDescending: string
       }
       page: {
+        title: string
+      }
+    }
+    optimize: {
+      page: {
+        actions: {
+          clear: string
+          start: string
+          stop: string
+        }
+        description: string
+        empty: string
+        enable: {
+          hint: string
+          label: string
+        }
+        messages: {
+          applyFailed: string
+          cleared: string
+          startFailed: string
+          stopFailed: string
+        }
+        params: {
+          concurrency: string
+          dnsTimeout: string
+          doh: string
+          tcpTimeout: string
+        }
+        progress: {
+          resolve: string
+          speed: string
+        }
+        stats: {
+          optimized: string
+          total: string
+          updatedAt: string
+        }
+        status: {
+          fail: string
+          ok: string
+          skip: string
+        }
         title: string
       }
     }
@@ -1589,6 +1632,7 @@ export interface TranslationResources {
           noDisney: string
           originalsOnly: string
           pending: string
+          risky: string
           unsupportedRegion: string
           yes: string
         }

@@ -1,0 +1,42 @@
+{
+  "page": {
+    "title": "IP 优选",
+    "description": "通过多通道 DNS 解析节点域名，按 TCP 延迟为每个节点选出最快 IP，并在生成运行时配置时替换 server 字段；不改动订阅文件本身。",
+    "actions": {
+      "start": "开始优选",
+      "stop": "停止",
+      "clear": "清除结果"
+    },
+    "enable": {
+      "label": "自动应用优选结果",
+      "hint": "在运行时配置中替换节点 server 字段；订阅更新后依然生效。"
+    },
+    "params": {
+      "concurrency": "并发数",
+      "tcpTimeout": "TCP 超时（毫秒）",
+      "dnsTimeout": "DNS 超时（毫秒）",
+      "doh": "DoH 回退"
+    },
+    "stats": {
+      "total": "节点总数：{{total}}（域名 {{domain}}，IP {{ip}}）",
+      "optimized": "已优选 {{count}} 个节点",
+      "updatedAt": "上次运行 {{time}}"
+    },
+    "progress": {
+      "resolve": "解析",
+      "speed": "测速"
+    },
+    "status": {
+      "ok": "成功",
+      "skip": "跳过",
+      "fail": "失败"
+    },
+    "empty": "暂无结果，请先运行优选。",
+    "messages": {
+      "startFailed": "优选失败",
+      "applyFailed": "应用优选结果失败",
+      "cleared": "已清除优选结果",
+      "stopFailed": "停止优选失败"
+    }
+  }
+}
